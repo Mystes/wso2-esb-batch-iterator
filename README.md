@@ -14,7 +14,7 @@ Copy the `BatchIteratorMediator-x.y.jar` to `$WSO2_ESB_HOME/repository/component
 ### 2. Use it in your proxies/sequences
 Mediator can be used as follows:
 ```xml
-<batchIterateor batchSize="number" [continueParent=(true | false)] [preservePayload=(true | false)] (attachPath="xpath")? expression="xpath">
+<batchIterator batchSize="number" [continueParent=(true | false)] [preservePayload=(true | false)] (attachPath="xpath")? expression="xpath">
    <target [to="uri"] [soapAction="qname"] [sequence="sequence_ref"] [endpoint="endpoint_ref"]>
      <sequence>
        (mediator)+
@@ -23,7 +23,7 @@ Mediator can be used as follows:
        endpoint
      </endpoint>?
    </target>+
-</batchIterateor>
+</batchIterator>
 ```
 
 #### Example: detach by element

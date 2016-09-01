@@ -22,6 +22,7 @@ import javax.xml.namespace.QName;
 import org.apache.axiom.om.OMAbstractFactory;
 import org.apache.axiom.om.OMElement;
 import org.apache.axiom.om.OMFactory;
+import org.apache.synapse.SynapseException;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -62,8 +63,8 @@ public class BatchIteratorMediatorFactoryTest {
         assertTrue("Expected preservePayload to be false", batchIteratorMediator.isPreservePayload() == false);
     }
 
-    @Test
-    public void shouldCreateBatchMediatorFromOMElementWithDefaultBatchSize() {
+    @Test(expected = SynapseException.class)
+    public void shouldThrowExceptionDueToMissingBatchSizeAttribute() {
         mediatorElement.removeAttribute(omFactory.createOMAttribute("batchSize", null, "3"));
         BatchIteratorMediator batchIteratorMediator = (BatchIteratorMediator) mediatorFactory
                 .createSpecificMediator(mediatorElement, null);

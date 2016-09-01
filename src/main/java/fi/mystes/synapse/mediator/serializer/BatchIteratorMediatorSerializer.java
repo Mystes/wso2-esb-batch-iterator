@@ -33,8 +33,9 @@ public class BatchIteratorMediatorSerializer extends IterateMediatorSerializer {
     public OMElement serializeSpecificMediator(Mediator m) {
         OMElement element = super.serializeSpecificMediator(m);
         element.setLocalName(BatchIteratorConstants.ROOT_TAG_NAME);
-        element.addAttribute(BatchIteratorConstants.ATT_BATCH_SIZE,
-                ((BatchIteratorMediator) m).getBatchSize().toString(), null);
+        Integer batchSize = ((BatchIteratorMediator) m).getBatchSize();
+        element.addAttribute(BatchIteratorConstants.ATT_BATCH_SIZE, batchSize != null ? batchSize.toString() : "1",
+                null);
         return element;
     }
 

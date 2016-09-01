@@ -136,21 +136,21 @@ public class BatchIteratorMediatorTest {
     }
 
     @Test
-    public void shouldBatchElementsInThree() {
+    public void shouldIterateInBatchSizeThree() {
         batchMediator.setBatchSize(3);
         batchMediator.mediate(context);
         verify(target, times(3)).mediate(notNull(MessageContext.class));
     }
 
     @Test
-    public void shouldBatchElementsInTwo() {
+    public void shouldIterateInBatchSizeFour() {
         batchMediator.setBatchSize(4);
         batchMediator.mediate(context);
         verify(target, times(2)).mediate(notNull(MessageContext.class));
     }
 
     @Test
-    public void shouldBatchElementsInSeven() {
+    public void shouldIterateInBatchSizeOne() {
         batchMediator.setBatchSize(1);
         batchMediator.mediate(context);
         verify(target, times(7)).mediate(notNull(MessageContext.class));

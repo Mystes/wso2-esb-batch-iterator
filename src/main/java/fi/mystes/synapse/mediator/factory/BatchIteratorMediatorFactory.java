@@ -30,7 +30,7 @@ import fi.mystes.synapse.mediator.config.BatchIteratorConstants;
 public class BatchIteratorMediatorFactory extends IterateMediatorFactory {
 
     /**
-     * The QName of detach mediator element in the XML config
+     * The QName of batch iterator mediator element in the XML config
      * 
      * @return QName of detach mediator
      */
@@ -49,7 +49,7 @@ public class BatchIteratorMediatorFactory extends IterateMediatorFactory {
      * @param properties
      *            bag of properties to pass in any information to the factory
      * 
-     * @return built detach mediator
+     * @return built batch iterator mediator
      */
     @Override
     public Mediator createSpecificMediator(OMElement element, Properties properties) {
@@ -64,7 +64,15 @@ public class BatchIteratorMediatorFactory extends IterateMediatorFactory {
         batchIterator.setTarget(mediator.getTarget());
         batchIterator.setTraceState(mediator.getTraceState());
         String batchSize = element.getAttributeValue(new QName(BatchIteratorConstants.ATT_BATCH_SIZE));
-        batchIterator.setBatchSize(new Integer(batchSize != null ? batchSize : "1"));
+        if (batchSize == null) {
+            handleException("batchSize attribute is required for Batch Iterator Mediator");
+        }
+        try {
+            Integer batchSizeInt = Integer.parseInt(batchSize);
+            batchIterator.setBatchSize(batchSizeInt);
+        } catch (Exception e) {
+            handleException("batchSize value must be number", e);
+        }
 
         return batchIterator;
     }
