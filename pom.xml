@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>fi.mystes.synapse.mediator</groupId>
-  <artifactId>wso2-esb-batch-iterator</artifactId>
+  <artifactId>wso2-esb-batch-iterator-mediator</artifactId>
   <version>1.0</version>
   <packaging>bundle</packaging>
-  <name>wso2-esb-batch-iterator</name>
+  <name>wso2-esb-batch-iterator-mediator</name>
   <description>Batch Iterator Mediator extends WSO2 Iterate Mediator by providing iteration by several elements (batch) at a time.</description>
   <build>
     <sourceDirectory>src/main/java</sourceDirectory>
