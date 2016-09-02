@@ -26,15 +26,15 @@ Mediator can be used as follows:
 </batchIterator>
 ```
 
-#### Example: detach by element
+#### Example
 ```xml
-<iterate batchSize="3" expression="//iterate">
+<batchIterator batchSize="3" expression="//iterate">
    <target>
      <sequence>
        <!-- Do something here with elements -->
      </sequence>
    </target>
-</iterate>
+</batchIterator>
 ```
 
 ## Technical Requirements
