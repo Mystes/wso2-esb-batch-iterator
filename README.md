@@ -1,15 +1,15 @@
-# WSO2 ESB Batch Iterator Mediator
+# WSO2 ESB Batch Iterator
 
 ## What is WSO2 ESB?
 [WSO2 ESB](http://wso2.com/products/enterprise-service-bus/) is an open source Enterprise Service Bus that enables interoperability among various heterogeneous systems and business applications.
 
 ## Features
-Batch Iterator Mediator extends Iterate Mediator by providing several elements (batch) iteration at a time.
+Batch Iterator Mediator extends [WOS2 Iterate Mediator](https://docs.wso2.com/display/ESB500/Iterate+Mediator) by providing iteration by several elements (batch) at a time.
 
 ## Usage
 
 ### 1. Install the mediator to the ESB
-Copy the `BatchIteratorMediator-x.y.jar` to `$WSO2_ESB_HOME/repository/components/dropins/`.
+Copy the `wso2-esb-batch-iterator-x.y.jar` to `$WSO2_ESB_HOME/repository/components/dropins/`.
 
 ### 2. Use it in your proxies/sequences
 Mediator can be used as follows:
@@ -37,10 +37,22 @@ Mediator can be used as follows:
 </iterate>
 ```
 
-## Tested with
+## Technical Requirements
 
-- WSO2 ESB 4.5.1
-- WSO2 ESB 4.8.1
+#### Usage
+
+* Oracle Java 6 or above
+* WSO2 ESB
+    * Wrapper Mediator has been tested with WSO2 ESB versions 4.9.0 & 5.0.0
+
+#### Development
+
+* Java 6 + Maven 3.0.X
+
+### Contributors
+
+- [Kreshnik Gunga](https://github.com/kgunga)
+- [Ville Harvala](https://github.com/vharvala)
 
 ## [License](LICENSE)
 
