@@ -1,4 +1,5 @@
 # WSO2 ESB Batch Iterator Mediator
+![Build status](https://circleci.com/gh/Mystes/wso2-esb-batch-iterator-mediator.svg?style=shield&circle-token=df6d6b6f67a9bdc7f7d58667942a6dcfeb7e0f62)
 
 ## What is WSO2 ESB?
 [WSO2 ESB](http://wso2.com/products/enterprise-service-bus/) is an open source Enterprise Service Bus that enables interoperability among various heterogeneous systems and business applications.
